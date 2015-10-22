@@ -1,25 +1,74 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Makinig Reddit My Way</title>
-
-	<!-- styles -->
-
+    <title>Making Reddit My Way</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-red.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
 </head>
+
 <body>
+    <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="text" id="subreddit" />
+        <label class="mdl-textfield__label" for="subbreddit">Subreddit</label>
+    </div>
+    <button class="ajaxButton mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Get Content <i class="material-icons">description</i></button>
+    </form>
+    <div id="contentList">
+    </div>
 
-<button class="ajaxButton">Click to request from reddit</button>
 
-<div id="ajaxTarget"></div>
-<ul id="contentList">
-
-</ul>
-
-
-
-	<!-- scripts -->
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="requestReddit.js">
-</script>
+    <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
+        <main class="mdl-layout__content">
+            <div class="mdl-grid">
+                <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+                    <figure class="mdl-card__media">
+                        <img src="http://tfirdaus.github.io/mdl/images/laptop.jpg" alt="" />
+                    </figure>
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Learning Web Design</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusamus, consectetur.</p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read More</a>
+                        <div class="mdl-layout-spacer"></div>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                    </div>
+                </div>
+                <div class="mdl-card mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+                    <figure class="mdl-card__media">
+                        <img src="http://tfirdaus.github.io/mdl/images/html5.jpg" alt="" />
+                    </figure>
+                    <div class="mdl-card__title">
+                        <h1 class="mdl-card__title-text">Learning HTML</h1>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusamus, consectetur.</p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read More</a>
+                        <div class="mdl-layout-spacer"></div>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+                        <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- scripts -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="requestReddit.js">
+    </script>
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.js"></script>
 </body>
+
 </html>

@@ -3,21 +3,33 @@ $(function(){
 	var ajaxButton = $('.ajaxButton');
 	var contentList = $('#contentList');
 	var redditData = [];
-	var thumbnails = [];
+
+	function makeCard (post) {
+		// body...
+	}
 
 	function getThumbnails (val, index, dataChildren) {
-		thumbnails[index] = (val.data);
-		if (thumbnails[index].thumbnail !="nsfw"){
-			contentList.append( "<li><img alt='" + thumbnails[index].url + "' src='" + thumbnails[index].thumbnail + "'</li>" );
+		post = (val.data);
+		var htmlCard = "<li><img alt='" + post.url + "' src='" + post.thumbnail + "'><br>" + post.title + "</li>"; 
+
+
+		// change if statement to accept nsfw?
+		// just find different json link
+		if (post.thumbnail !="nsfw"){
+			contentList.append(htmlCard);
 		}
+
 	}
 
 
 
 	// event listener to load some data
 	ajaxButton.click(function(e){
+		contentList.html('');
+		var subreddit = $("#subreddit")[0].value || "pics"
+
 		e.preventDefault();
-		$.getJSON("http://www.reddit.com/r/pics.json?jsonp=?", function (data) {
+		$.getJSON("http://www.reddit.com/r/" + subreddit + ".json?limit=100&jsonp=?", function (data) {
 	            redditData = data.data.children;
 	            
 	            // scrape the mods
@@ -26,8 +38,7 @@ $(function(){
 	            }
 	            console.log(redditData);
 	            // gimme that sweet content
-	            thumbnails = redditData.forEach(getThumbnails);
-	            console.log(thumbnails);
+	            redditData.forEach(getThumbnails);
 
 
 	           }); //end of ajax call
