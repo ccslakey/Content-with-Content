@@ -25,13 +25,13 @@ $(function(){
 	            redditData.forEach(getThumbnails);
 	            $("#subreddit")[0].value = '';
 	           }); //end of ajax call
-		}); //end .click
+		}); //end .click event
 
 	function makeCard (post) {
 		var constructedCard = '<div class="card"><img class="thumbnail" src="' + post.thumbnail + '" alt="Image Alt" />'+ 
 				'<div class="info"><div class="title">' + post.title + '<div class="sub">/r/' + post.subreddit +
-				'<div class="user">/u/' + post.author +'</div></div></div>'
-		console.log(constructedCard);
+				'<div class="user">/u/' + post.author +'<div class="url">' + post.url + '</div></div></div></div>'
+	
 		return constructedCard;    
 	}
 
@@ -43,7 +43,6 @@ $(function(){
 		// just find different json link
 		if (post.thumbnail !="nsfw"){
 			cardHolder.append(htmlCard);
-			// console.log(htmlCard);
 		}
 
 	}

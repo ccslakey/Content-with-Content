@@ -27,7 +27,8 @@
 
 .thumbnail > .card {
 	height: 100%;
-	position: absolute;
+	position: relative;
+	float: left;
 }
 .info > .card {
 	float: right;
