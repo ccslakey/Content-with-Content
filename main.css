@@ -16,3 +16,21 @@
     margin-right: 3px;
     margin-left: 3px;
 }
+
+.card {
+	max-width: 85%;
+	border-style: outset;
+	border-width: 5px;
+	border-color: black;
+	position: center;
+}
+
+.thumbnail > .card {
+	height: 100%;
+	position: absolute;
+}
+.info > .card {
+	float: right;
+	position: absolute;
+	top: 0px;
+}
